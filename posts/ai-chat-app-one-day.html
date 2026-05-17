@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>从零构建一个AI聊天App：1天复刻1个mini豆包 | Seize the Moment</title>
+    <meta name="description" content="像千问、豆包、ChatGPT这样的AI聊天应用已经普及到千家万户，AI Coding能力也日新月异。">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">Seize the Moment</a>
+      <nav class="nav" aria-label="主导航">
+        <a href="/">首页</a>
+        <a href="/posts/hello-world.html">第一篇</a>
+      </nav>
+    </header>
+
+    <main>
+      <article class="post">
+        <header class="post-header">
+          <a class="back-link" href="/">返回首页</a>
+          <p class="eyebrow">AI Coding</p>
+          <h1>从零构建一个AI聊天App：1天复刻1个mini豆包</h1>
+          <time datetime="2026-04-19">2026-04-19</time>
+        </header>
+<h2><a id="_0"></a>前言</h2> 
+<p>像千问、豆包、ChatGPT这样的AI聊天应用已经普及到千家万户&#xff0c;AI Coding能力也日新月异&#xff0c;我想验证下让AI来开发AI聊天应用需要多久&#xff0c;同时也是温故知新。</p> 
+<blockquote> 
+ <p>验证下来&#xff0c;发现一天左右的时间就能开发出一个具备主要功能的AI聊天应用&#xff0c;具体代码见&#xff1a;<a href="https://github.com/seizethemoment/hi-my-ai-chat">https://github.com/seizethemoment/hi-my-ai-chat</a></p> 
+</blockquote> 
+<p>以下是实现效果&#xff0c;支持文本聊天、图片理解、语音输入和播放、流式回复、多会话管理、搜索和收藏等功能&#xff0c;后面持续更新。</p> 
+<p></p> 
+<div class="csdn-video-box" data-report-view="{&#34;spm&#34;:&#34;3001.10261&#34;,&#34;extra&#34;:{&#34;id&#34;:&#34;a6iGRecJ-1776610695696&#34;}}">
+ <iframe id="a6iGRecJ-1776610695696" frameborder="0" src="https://live.csdn.net/v/embed/522442" allowfullscreen="true" data-mediaembed="csdn"></iframe>
+ <p>HiChat-Usecase</p>
+</div> 
+<p></p> 
+<p><img src="/assets/posts/ai-chat-app/image-01.jpeg" alt="在这里插入图片描述" /><br /> <img src="/assets/posts/ai-chat-app/image-02.jpeg" alt="在这里插入图片描述" /></p> 
+<h2><a id="_13"></a>一、环境准备</h2> 
+<blockquote> 
+ <p>目标&#xff1a;创建一个App。<br /> 验收标准&#xff1a;成功运行App&#xff0c;看到“Hello, world!”输出。</p> 
+</blockquote> 
+<p>选择移动任意端或者桌面端App来作为落地场景都可以&#xff0c;因为对AI来说都差不多&#xff0c;只不过最新版Xcode自带AI Coding能力&#xff0c;不用登录都能匿名使用ChatGPT能力&#xff0c;所以这里选择用iOS端来开发。</p> 
+<p>更新Xcode到最新版本&#xff0c;将官方Xcode MCP配置到AI IDE&#xff0c;便于AI在写完代码后进行自动化验收。<br /> 这一步只要点几下鼠标&#xff1a;打开Xcode -&gt; File -&gt; New -&gt; Project&#xff0c;一路点击下一步&#xff0c;再点击Run&#xff0c;就能编译运行到模拟器&#xff0c;看到 Hello, world&#xff0c;就算达成目标。</p> 
+<p>BTW&#xff0c;在AI时代&#xff0c;苹果的产品越发吃香&#xff0c;下单一台Mac mini都要等几个月才有货&#xff0c;&#x1f4bb;运行也更省电&#xff0c;以及安全性相对更高。</p> 
+<h2><a id="_25"></a>二、聊天页面创建</h2> 
+<blockquote> 
+ <p>目标&#xff1a;创建一个聊天页面。<br /> 验收标准&#xff1a;运行App&#xff0c;展示聊天页面</p> 
+</blockquote> 
+<p>输入&#xff1a;豆包或千问的一张聊天页面截图 &#43; 需求描述&#xff0c;比如“根据图片把App首页改成聊天页面&#xff0c;主要包括顶部导航栏、中间消息展示区域、底部输入区域”。</p> 
+<p>不同水平的AI会根据你的截图和描述&#xff0c;生成一致度有所差别的效果。高水平的AI甚至会自己调用Xcode MCP来完成消息的发送和展示验收。针对这种水平的AI&#xff0c;你可以额外加一句&#xff1a;开发完成后&#xff0c;你输入一句文本进行发送&#xff0c;并且mock文本作为返回数据并上屏展示。</p> 
+<h2><a id="_33"></a>三、模型服务调通</h2> 
+<blockquote> 
+ <p>目标&#xff1a;让AI模型进行消息回复&#xff0c;而不是mock。<br /> 验收标准&#xff1a;运行App&#xff0c;发送多条不同的消息&#xff0c;收到真实的模型回复。</p> 
+</blockquote> 
+<p>上一步是使用mock数据来作为消息回复&#xff0c;这里是跑通真实场景。<br /> 需要准备好你自己的模型调用信息&#xff08;Base Url 和 API Key&#xff09;&#xff0c;比如OpenAI、阿里云百炼平台、智谱或Kimi等平台订阅&#xff0c;容易封号的Anthropic就不推荐了。</p> 
+<ol><li>开发阶段可以先把这些信息硬编码便于调用。</li><li>我在<a href="https://github.com/seizethemoment/hi-my-ai-chat">HiChat</a>中是提供了一个设置页让用户一次性配置这些信息。</li></ol> 
+<p>调用模型服务&#xff0c;这里使用的最常见通用、兼容性最强的是OpenAI的核心接口 —— Chat Completions API —— 通过 POST /v1/chat/completions 端点&#xff0c;基于一组角色消息&#xff08;system / user / assistant&#xff09;生成模型回复。</p> 
+<pre><code class="prism language-python">基本用法
+POST https<span class="token punctuation">:</span><span class="token operator">//</span>api<span class="token punctuation">.</span>openai<span class="token punctuation">.</span>com<span class="token operator">/</span>v1<span class="token operator">/</span>chat<span class="token operator">/</span>completions
+                                                                                
+  <span class="token punctuation">{<!-- --></span>
+    <span class="token string">&#34;model&#34;</span><span class="token punctuation">:</span> <span class="token string">&#34;gpt-5.4&#34;</span><span class="token punctuation">,</span>                                                         
+    <span class="token string">&#34;messages&#34;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>                                                               
+      <span class="token punctuation">{<!-- --></span><span class="token string">&#34;role&#34;</span><span class="token punctuation">:</span> <span class="token string">&#34;system&#34;</span><span class="token punctuation">,</span> <span class="token string">&#34;content&#34;</span><span class="token punctuation">:</span> <span class="token string">&#34;你是一个有用的助手&#34;</span><span class="token punctuation">}</span><span class="token punctuation">,</span>                      
+      <span class="token punctuation">{<!-- --></span><span class="token string">&#34;role&#34;</span><span class="token punctuation">:</span> <span class="token string">&#34;user&#34;</span><span class="token punctuation">,</span> <span class="token string">&#34;content&#34;</span><span class="token punctuation">:</span> <span class="token string">&#34;你好&#xff01;&#34;</span><span class="token punctuation">}</span>                                     
+    <span class="token punctuation">]</span>                                                                           
+  <span class="token punctuation">}</span>
+
+核心参数                                                                      
+  <span class="token operator">-</span> model — 指定使用的模型&#xff08;如 gpt<span class="token operator">-</span><span class="token number">5.4</span>、qwen3<span class="token punctuation">.</span><span class="token number">6</span><span class="token operator">-</span>plus 等&#xff09;                             
+  <span class="token operator">-</span> messages — 对话消息列表&#xff0c;每条消息包含 role 和 content         
+  <span class="token operator">-</span> temperature — 控制输出随机性&#xff08;<span class="token number">0</span><span class="token operator">~</span><span class="token number">1</span>&#xff09;                                         
+  <span class="token operator">-</span> max_tokens — 限制最大输出长度                                               
+  <span class="token operator">-</span> stream — 是否启用流式输出                                                   
+  <span class="token operator">-</span> tools — 工具调用&#xff08;function calling&#xff09;定义                                    
+  <span class="token operator">-</span> top_p <span class="token operator">/</span> frequency_penalty <span class="token operator">/</span> presence_penalty — 采样控制 
+</code></pre> 
+<p>不过&#xff0c;现在模型都在向上生长、内置工具&#xff0c;OpenAI也推出了新的Responses API&#xff0c;建议大家迁移&#xff1a;<a href="https://developers.openai.com/api/docs/guides/migrate-to-responses" rel="nofollow">https://developers.openai.com/api/docs/guides/migrate-to-responses</a> &#xff0c;阿里云百炼也有相应支持&#xff1a;<a href="https://help.aliyun.com/zh/model-studio/compatibility-with-openai-responses-api" rel="nofollow">https://help.aliyun.com/zh/model-studio/compatibility-with-openai-responses-api</a> &#xff0c;具体可以参见&#xff1a;<a href="https://zhuanlan.zhihu.com/p/2011179312930379001" rel="nofollow">深入理解 OpenAI 的三代 API&#xff1a;从 Completions 到 Responses 的演进之路</a>。</p> 
+<p>在HiChat中&#xff0c;是由OpenAIChatService这个类来承接这个功能。</p> 
+<h2><a id="_70"></a>四、流式回复的打字机效果</h2> 
+<blockquote> 
+ <p>目标&#xff1a;让AI回复具备打字机效果。<br /> 验收标准&#xff1a;运行App&#xff0c;发送多条消息&#xff0c;观察消息回复上屏是逐字更新的&#xff0c;而不是完整一次性上屏。</p> 
+</blockquote> 
+<p>AI聊天应用的一个经典交互就是AI回复的内容是逐字或逐token展示出来的&#xff0c;大大提升了交互体验&#xff1a;</p> 
+<ol><li>低延迟&#xff0c;用户不用等所有内容思考生成完才看到内容。</li><li>模拟了一边思考一边打字的拟人交&#xff0c;让用户也可以一边等待一边消费内容。</li></ol> 
+<p>首先&#xff0c;通过设置stream&#61;true开启流式&#xff0c;让服务端发你SSE增量文本。</p> 
+<pre><code class="prism language-swift">    <span class="token keyword">func</span> <span class="token function-definition function">streamReply</span><span class="token punctuation">(</span>
+        <span class="token keyword">for</span> conversation<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">OpenAIChatTurn</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        timeoutInterval<span class="token punctuation">:</span> <span class="token class-name">TimeInterval</span> <span class="token operator">&#61;</span> <span class="token number">45</span><span class="token punctuation">,</span>
+        maxRetryCount<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">&#61;</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        onRetry<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token attribute atrule">&#64;Sendable</span> <span class="token punctuation">(</span><span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token operator">-&gt;</span> <span class="token class-name">Void</span><span class="token punctuation">)</span><span class="token operator">?</span> <span class="token operator">&#61;</span> <span class="token nil constant">nil</span><span class="token punctuation">,</span>
+        onDelta<span class="token punctuation">:</span> <span class="token attribute atrule">&#64;escaping</span> <span class="token attribute atrule">&#64;Sendable</span> <span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token operator">-&gt;</span> <span class="token class-name">Void</span>
+    <span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token keyword">throws</span> <span class="token operator">-&gt;</span> <span class="token class-name">String</span> <span class="token punctuation">{<!-- --></span>
+        <span class="token keyword">let</span> request <span class="token operator">&#61;</span> <span class="token keyword">try</span> <span class="token function">makeRequest</span><span class="token punctuation">(</span><span class="token keyword">for</span><span class="token punctuation">:</span> conversation<span class="token punctuation">,</span> stream<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> timeoutInterval<span class="token punctuation">:</span> timeoutInterval<span class="token punctuation">)</span>
+</code></pre> 
+<p>当用户发送一条消息后&#xff0c;先立刻插入一条空的 assistant 消息&#xff0c;状态设为 streaming&#xff0c;这样 UI 有一个固定占位可持续更新。<br /> 随后 <code>generateAssistantReply</code> 做两件并行的事&#xff1a;</p> 
+<ol><li>启一个 <code>typewriterTask </code>消费本地字符流。</li><li>调 <code>service.streamReply(...)</code> 去读 OpenAI 的 SSE 增量&#xff0c;每拿到一段文本就回调 <code>onDelta(delta)</code>。</li></ol> 
+<p>真正的“打字机”效果是由端侧本地加工实现的&#xff1a;</p> 
+<ol><li>由<code>TypewriterBuffer</code>来处理每次的增量文本&#xff0c;拆成单个字符。</li><li>由<code>playTypewriter</code>一个字符一个字符消费&#xff0c;切到主线程调用 <code>appendText(...)</code> 更新消息文本&#xff0c;然后 sleep 一小段时间。</li><li>延时是按字符类型区分的&#xff1a;普通字符 18ms&#xff0c;换行 34ms&#xff0c;标点 42ms&#xff0c;所以视觉上会比纯匀速更像人在打字。</li></ol> 
+<p>这种方案比较简单直接&#xff0c;适用于普通文本场景&#xff0c;但面对富文本场景就不适合了&#xff0c;需要另外实现。</p> 
+<h2><a id="_102"></a>更多功能&#xff1a;语音输入和播放、图片理解、多会话管理、搜索和收藏……</h2> 
+<p>当完成了上面的步骤之后&#xff0c;已经具备了基本的AI聊天App的雏形&#xff0c;只不过局限于文本交流&#xff0c;接下来就要扩展到语音、图片、工具调用等场景&#xff0c;甚至还需要考虑上下文窗口大小和压缩&#xff0c;如果有想法也可以进一步引入记忆系统。这里就不完全展开了&#xff0c;只提一下语音输入和播放。</p> 
+<p>当你选择了使用原生代码开发后&#xff0c;AI对主流平台系统库是很了解的。<br /> 比如语音输入和播放&#xff0c;输入部分采用的是AVAudioEngine &#43; SFSpeechRecognizer&#xff08;iOS 原生语音识别&#xff09;&#xff0c;</p> 
+<pre><code>  流程&#xff1a;1. 权限请求 → 2. 音频引擎启动 → 3. 实时语音识别 → 4. 输出文字
+                                                                                
+  1. 权限申请 — 分别请求麦克风权限&#xff08;AVAudioApplication.requestRecordPermission&#xff09;
+  和语音识别权限&#xff08;SFSpeechRecognizer.requestAuthorization&#xff09;                     
+  2. 音频采集 — AVAudioEngine 的 inputNode 安装 tap&#xff0c;每 1024 buffer             
+  将麦克风音频数据送入识别引擎&#xff1a;                                                
+  inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) {
+  buffer, _ in                                                                  
+      recognitionRequest?.append(buffer)                          
+  }
+  3. 实时识别 — SFSpeechAudioBufferRecognitionRequest 配置为                    
+  shouldReportPartialResults &#61; true&#xff0c;边说边返回中间结果&#xff0c;通过                   
+  speechRecognizer.recognitionTask 的回调持续更新 transcript                    
+  4. 结束处理 — 用户松手后 endAudio() 停止输入&#xff0c;设置 1.5s                       
+  超时兜底&#xff08;scheduleRecognitionFallback&#xff09;&#xff0c;等 isFinal 回调或超时后将文字写入    
+  finalTranscript
+</code></pre> 
+<p>输出部分采用的是AVSpeechSynthesizer&#xff08;iOS 原生 TTS 文字转语音&#xff09;。</p> 
+<pre><code>  流程&#xff1a; 1. 用户点击播放 → 2. 语言检测 → 3. 配置语音 → 4. 播放音频                     
+                                                                                
+  1. 语言自动检测 — 用 NLLanguageRecognizer                                     
+  分析消息文本的语种&#xff0c;按优先级匹配语音&#xff1a;检测到的语言 → 用户首选语言 → zh-CN →   
+  en-US                                                                         
+  2. 创建语音片段 — AVSpeechUtterance(string: text) 包装文本&#xff0c;设置参数&#xff1a;
+  utterance.rate &#61; 0.45  // 中文语速
+  utterance.pitchMultiplier &#61; 1.0                                               
+  utterance.postUtteranceDelay &#61; 0.05
+  3. 播放 — synthesizer.speak(utterance) 开始播放&#xff0c;通过                         
+  AVSpeechSynthesizerDelegate 监听完成/取消事件来清理状态                       
+  4. 切换控制 — togglePlayback(for:) 实现播放/暂停切换&#xff0c;同一消息再次点击则
+  stop()                                                                        
+                                                                  
+  音频会话配置&#xff1a; .playback 类别 &#43; .spokenAudio 模式 &#43;                           
+  .duckOthers&#xff08;降低其他音频音量&#xff09; 
+</code></pre> 
+<p>TTS全称是Text-to-Speech&#xff0c;通常包含三个主要组件&#xff1a;语言分析器、声学模型和语音声码器。豆包、千问的声音就是这个领域。如果你经常用iPhone的图书app在看书&#xff0c;比如看一些英文书籍&#xff0c;很大概率会使用到。<br /> 之前我在使用AVSpeechSynthesizer时&#xff0c;要吭哧吭哧看官方文档、API接口和说明来调用&#xff0c;现在根本不需要&#xff0c;只需要告诉AI我要实现什么功能 —— 体验大大提升。</p> 
+<h2><a id="_149"></a>踩坑和回顾</h2> 
+<p>这是一个周末间隙让AI开发的应用&#xff0c;累计加起来若干个小时&#xff0c;没有具体统计。<br /> 因为周六上午我带娃出去户外&#xff0c;周六下午去西溪湿地逛到晚饭时间才回&#xff0c;周天也类似早上、下午都出门。以下是一些做到目前的感受&#xff1a;</p> 
+<blockquote> 
+ <p>在使用AI时&#xff0c;我们给AI的输入以 目标 和 验收标准 为主&#xff0c;用来指导AI自主完成长程任务。</p> 
+</blockquote> 
+<blockquote> 
+ <p>开发好某个功能&#xff0c;到达一定阶段&#xff0c;要做git记录&#xff0c;避免AI改坏代码很难修。</p> 
+</blockquote> 
+<blockquote> 
+ <p>AI写代码容易一味堆积&#xff0c;需要适当把握方向和引导它进行重构优化。</p> 
+</blockquote>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 Seize the Moment</p>
+    </footer>
+  </body>
+</html>

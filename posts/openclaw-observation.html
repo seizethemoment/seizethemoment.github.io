@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>对小龙虾openclaw的关注、学习、使用和变化观察 | Seize the Moment</title>
+    <meta name="description" content="对小龙虾openclaw的关注、学习、使用和变化观察">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">Seize the Moment</a>
+      <nav class="nav" aria-label="主导航">
+        <a href="/">首页</a>
+        <a href="/posts/hello-world.html">第一篇</a>
+      </nav>
+    </header>
+
+    <main>
+      <article class="post">
+        <header class="post-header">
+          <a class="back-link" href="/">返回首页</a>
+          <p class="eyebrow">AI Agent</p>
+          <h1>对小龙虾openclaw的关注、学习、使用和变化观察</h1>
+          <time datetime="2026-04-16">2026-04-16</time>
+        </header>
+<p>最近在整理回顾对小龙虾openclaw的关注、学习和使用时&#xff0c;第一反应是让AI根据主题帮我写材料&#xff0c;再让AI针对这个主题提一些问题和回答。</p>
+
+<p></p>
+
+<p>这种借助AI来加速了解和学习一样东西的方案&#xff0c;据我观察&#xff0c;从企业CEO到中小学生都有在使用&#xff0c;使用的工具从NotebookLM到豆包千问都有。</p>
+
+<p>
+我立马就让AI快速生成了一堆文档&#xff0c;形式上从md到html再到ppt都有&#xff0c;主题上从整体框架、模块拆解、分模块deep dive、业界对比、人机对比、常见问题挑战和解法思路等等。</p>
+
+<p>
+但我转念一想&#xff0c;觉得人生重在体验&#xff0c;有意思的内容还是要在大脑里留痕&#xff0c;而不是被AI管道化。<br />
+所以我决定从自己的思考实践出发&#xff0c;记录下&#xff1a;<br />
+1. 对小龙虾的关注变化<br />
+2. 对小龙虾的了解学习和使用<br />
+3. 对小龙虾带来的变化的个人理解和观察</p>
+
+<p></p>
+
+<h2>#1 信息爆炸时代&#xff0c;如何关注信息&#xff1f;从clawdbot到openclaw&#xff0c;我对小龙虾的关注变化</h2>
+
+<p>
+春节前&#xff0c;在AI狂飙、人人FOMO、一天没上网就out、要离开电脑或者token没用完就想着多给AI布置任务的时代&#xff0c;我开始觉得人的注意力才是最宝贵的资源 —— 全都跟等于全都没跟&#xff0c;需要选择注意哪些、不注意哪些。</p>
+
+<p>
+比如春节前的某天&#xff0c;github trending第一的是名叫WiFi DensePose的项目&#xff0c;号称可以“用WiFi无线电波实时分析屋内人体姿势、监测生命体征和数据”&#xff0c;star曲线直线攀升。我思考了几秒&#xff0c;就选择不关注。后来这个项目也无声无息了。</p>
+
+<p></p>
+
+<p></p>
+
+<p class="img-center"><img alt="图片" height="662" src="/assets/posts/openclaw-observation/image-01.jpeg" width="1080" /></p>
+
+<p></p>
+
+<p class="img-center"><img alt="图片" height="764" src="/assets/posts/openclaw-observation/image-02.jpeg" width="1080" /></p>
+
+<p>图例&#xff1a;某天github trending第一的项目wifi-densepose&#xff0c;和github历史最快第一的openclaw。</p>
+
+<p></p>
+
+<p>那怎么选择注意哪些、不注意哪些呢&#xff1f;baoyu写了一篇四象限减法的文章可以作为参考&#xff1a;<br />
+• 越能帮助提升生产力的、知识保鲜期越久的&#xff0c;越值得投入注意力。<br />
+• 离生产力越远、知识保鲜期越短的可以过滤。</p>
+
+<p></p>
+
+<p></p>
+
+<p class="img-center"><img alt="图片" height="1080" src="/assets/posts/openclaw-observation/image-03.jpeg" width="1080" /></p>
+
+<p></p>
+
+<p>但不是绝对的&#xff0c;一样东西会在四象限中发生变化。比如&#x1f99e;</p>
+
+<p>
+1. 春节期间&#xff0c;还处于左上象限“地图感”&#xff0c;我主要是关注傅盛的龙虾日记。印象最深刻的是他在医院病床上&#xff0c;让龙虾写脚本爬了全公司的组织架构和员工通讯录&#xff0c;并根据每个员工的聊天会话记录定制拜年短信。我当时的反应是&#xff0c;不愧是CEO&#xff0c;要是我这么搞了&#xff0c;当天我就提包走人了&#xff0c;因为违反了公司安全守则。安全意识深入我心&#x1f602;</p>
+
+<p>
+2. 节后返工&#xff0c;移动到“试一试”、“多投入”的区间。</p>
+
+<p>    开始在个人电脑上安装尝试&#xff0c;但感觉没太多使用场景&#xff0c;大部分人用来查个天气、模拟炒股不是我需要的。也让小孩体验了下&#xff0c;创建了个黑板报、让AI整理了下学习资料。其它要远程操控电脑 开个ssh或远程控制软件 就能操作电脑上的AI工具。只要通道建立了&#xff0c;后面就是coding agent的事了。<br />
+    工作电脑上&#xff0c;我选择了qoderwork作为第一批内测用户&#xff0c;体感还不错。安全&#xff0c;还是安全考虑&#xff0c;我觉得现有的安全规章和先进的AI模型生产力之间已经存在矛盾了。<br />
+    和其他人交流&#x1f99e;使用案例&#xff1a;①有公司开始让龙虾整理历史工单和产品文档&#xff0c;让AI自动答疑&#xff1b;②有多家创业公司让龙虾自动整理邮箱、判断并写回复草稿。</p>
+
+<p></p>
+
+<p></p>
+
+<p class="img-center"><img alt="图片" height="1080" src="/assets/posts/openclaw-observation/image-04.jpeg" width="1080" /></p>
+
+<p></p>
+
+<h2>#2 对小龙虾的了解学习和使用 </h2>
+
+<h3>#2.1 为什么openclaw这么火&#xff1f;</h3>
+
+<p>
+细想一下&#xff0c;上面那些案例一定要用龙虾来完成吗&#xff1f;显然不是&#xff0c;用coding agent就能做到。<br />
+那为什么是龙虾带火起来的呢&#xff1f;我理解首先是产品概念&#xff1a;</p>
+
+<p>
+1. 产品理念符合大众/非技术圈对“智能体”的理解和期望 —— 我吩咐你一件事&#xff0c;你去完成了&#xff0c;而且是可以免费搭建的、属于我的私人助手。据pete所说&#xff0c;他这个项目做了一年多&#xff0c;前期是非技术圈的朋友更感兴趣&#xff0c;技术圈的人可能会觉得这些技术组件/要素我都有解法、而且都在用了&#xff0c;反应比较淡。</p>
+
+<p>
+2. 时间节点因素&#xff0c;为什么现在你吩咐一件事&#xff0c;它就能完成了&#xff1f;之前吩咐AutoGPT它却完成不了&#xff1f;到了2026年初&#xff0c;coding agent能力跨过了临界点&#xff0c;遇到缺少的工具&#xff0c;它可以自己写代码添加工具&#xff0c;具备自主增强和进化的能力。</p>
+
+<p>
+3. 社会氛围因素&#xff0c;AI时代群体性FOMO&#xff0c;企业老板对7x24数字员工的期待&#xff0c;叠加国外铺很广的Agent广告宣传和国内千问豆包等AI功能宣传铺垫。</p>
+
+<p>
+接着才是背后支撑的技术&#xff1a;</p>
+
+<p>
+1. 窗口&#xff1a;通过插件化的Channels设计&#xff0c;对接市面主流IM应用作为用户使用接口&#xff0c;让获客渠道最大化&#xff0c;让用户下任务零门槛化</p>
+
+<p>
+2. 大脑&#xff1a;经典的网关中枢型架构&#xff0c;和微服务的API网关一样&#xff0c;做归一化处理和分发&#xff0c;对外承接多IM设计&#xff0c;对内调度多Agents执行任务。</p>
+
+<p>
+3. 四肢&#xff1a;Agents模块负责做事&#xff1a;接收 Gateway 分发的请&#xff0c;调用 AI 模型生成回复&#xff0c;执行工具调用。</p>
+
+<p>
+4. 其它还有插件扩展模块、安全防护模块&#xff0c;但实际上默认是不安全的&#xff0c;所以政府部门、金融部门还有部分医疗机构都禁止安装openclaw。</p>
+
+<p></p>
+
+<p></p>
+
+<p class="img-center"><img alt="图片" height="893" src="/assets/posts/openclaw-observation/image-05.jpeg" width="1059" /></p>
+
+<p></p>
+
+<p></p>
+
+<p class="img-center"><img alt="图片" height="1297" src="/assets/posts/openclaw-observation/image-06.jpeg" width="979" /></p>
+
+<p></p>
+
+<h3>#2.2 对记忆系统的了解学习 </h3>
+
+<p>大模型天然是&#34;无状态&#34;的——每次对话都是一张白纸。记忆系统要解决的核心问题是&#xff1a;如何让 AI 在多轮交互中保持连贯性&#xff0c;同时不被历史噪音污染。 这个问题在 AI 编码助手、个人助理、客服等场景下尤为关键。</p>
+
+<p>
+我之前会为Agent划分不同的工作目录&#xff08;比如开多个cursor/qoder&#xff09;&#xff0c;在目录下设置 AGENTS.md、业界资料references、个人想法记录和工作进展&#xff0c;相当于把我的记忆上下文导出&#xff0c;让AI更理解我来帮我做事。</p>
+
+<p>所以当我看到龙虾的SOUL.md、USER.md、MEMORY.md等设计时&#xff0c;眼前一亮。</p>
+
+<p>
+龙虾会成为越来越理解用户的私人助手&#xff0c;主要来源于它的记忆系统&#xff1a;<br />
+1. 以.md文件为持久真相源&#xff0c;引入拟人化设计&#xff0c;包括长短期记忆和记忆衰减机制。<br />
+2. 秉承本地优先原则&#xff0c;基于sqlite设计了语义&#43;关键词混合召回方案。<br />
+3. 配套了双阶段记忆召回工具&#xff1a;memory_search和memory_get&#xff0c;用来降低幻觉和控制召回上下文大小。</p>
+
+<p></p>
+
+<p></p>
+
+<p class="img-center"><img alt="图片" height="1347" src="/assets/posts/openclaw-observation/image-07.jpeg" width="1080" /></p>
+
+<p></p>
+
+<p>每次Agent启动或开新会话时&#xff0c;加载固定上下文&#xff1b;</p>
+
+<p></p>
+
+<p class="img-center"><img alt="图片" height="709" src="/assets/posts/openclaw-observation/image-08.jpeg" width="1080" /></p>
+
+<p></p>
+
+<p>当用户提问、Agent推理、工具执行需要时&#xff0c;会按照以下业界常见的混合搜索流程做进一步召回&#xff1a;</p>
+
+<blockquote>
+<p>用户查询<br />
+ → Embedding&#xff08;多提供商&#xff09;<br />
+ → 向量搜索&#xff08;sqlite-vec&#xff09;&#43; BM25 全文搜索&#xff08;FTS5&#xff09;<br />
+ → 混合得分&#xff08;0.7 × vector &#43; 0.3 × text&#xff09;<br />
+ → 时间衰减&#xff08;30 天半衰期&#xff0c;常青记忆豁免&#xff09;<br />
+ → MMR 重排序&#xff08;λ&#61;0.7 平衡相关性与多样性&#xff09;<br />
+ → Top-K 结果返回</p>
+
+<p></p>
+</blockquote>
+
+<p></p>
+
+<p>在召回时&#xff0c;会基于配套工具和提示词&#xff0c;做双阶段特色优化&#xff1a;<br />
+1. memory_search&#xff1a;做语义检索&#xff08;hybrid&#xff1a;向量 &#43; 关键词&#xff09;&#xff0c;快速找候选片段&#xff0c;返回文件和行号信息。<br />
+2. memory_get&#xff1a;在 memory_search 之后使用&#xff0c;仅拉取需要的lines&#xff0c;保持上下文精简。<br />
+3. 要求在回答关于过往工作、决策、日期、人员、偏好或待办事项的问题之前&#xff0c;必须先对 MEMORY.md &#43; memory/*.md&#xff08;以及可选的会话记录&#xff09;进行语义搜索&#xff0c;通过基于用户实际历史而非模型知识来降低幻觉。</p>
+
+<p></p>
+
+<p></p>
+
+<p class="img-center"><img alt="图片" height="923" src="/assets/posts/openclaw-observation/image-09.jpeg" width="1080" /></p>
+
+<p></p>
+
+<p>当上下文过长需要压缩时&#xff0c;触发写入。由模型判断长期、重要或日常任务事件&#xff0c;分别写到MEMORY.md或者daily log。</p>
+
+<p>
+压缩条件是openclaw套壳的pi-coding-agent来决定的&#xff0c;通常有两种条件触发&#xff1a;<br />
+1. 溢出恢复&#xff1a;模型返回上下文溢出错误 → 压缩 → 重试。<br />
+2. 阈值维护&#xff1a;在成功的回合后&#xff0c;当&#xff1a; contextTokens &gt; contextWindow - reserveTokens<br />
+其中&#xff1a; contextWindow  是模型的上下文窗口&#xff0c; reserveTokens  是为提示 &#43; 下一个模型输出保留的空间。</p>
+
+<p>
+大致的压缩指令如下&#xff1a;</p>
+
+<p></p>
+
+<p class="img-center"><img alt="图片" height="845" src="/assets/posts/openclaw-observation/image-10.jpeg" width="1080" /></p>
+
+<p></p>
+
+<h3>#2.3 对记忆系统的思考疑惑 </h3>
+
+<p>上面的记忆系统方案看起来好像很完善&#xff0c;但为什么要设置 7:3 的语义和关键字权重比例&#xff0c;有没有对这套记忆系统的质量评测呢&#xff1f;</p>
+
+<p>
+7:3 相对好回答&#xff0c;因为这是常见的通用RAG经验值。在不同的应用场景可能权重比例就不同&#xff0c;或者要叠加其它检索方案。</p>
+
+<p></p>
+
+<p></p>
+
+<p class="img-center"><img alt="图片" height="457" src="/assets/posts/openclaw-observation/image-11.jpeg" width="1080" /></p>
+
+<p></p>
+
+<p>既然不同场景的权重不同&#xff0c;那么就应该有对应的质量评测&#xff0c;才好说明这个配置是有效果的。</p>
+
+<p>
+我关注并遇到过一些AI记忆系统的问题&#xff0c;觉得是可以作为评测基线的&#xff1a;<br />
+• ChatGPT案例&#xff1a;2025年初&#xff0c;OpenAI 默认开启了 &#34;Reference Chat History&#34; 功能&#xff0c;大量用户报告 ChatGPT 严重幻觉和记忆混乱&#xff0c;具体表现为串用户记忆、把用户聊天记录作为回复。<br />
+• OpenClaw案例&#xff1a;2026年初&#xff0c;OpenClaw把Meta AI安全总监的几百封邮件删除了。原因是记忆压缩时&#xff0c;把“不要删除邮件”压缩成“删除邮件”。peter也对此做了回复&#xff0c;表示会进行安全优化。<br />
+• Cursor案例&#xff1a;用户反馈在不同会话中规则遵循度不一致&#xff0c;原因是用户级rules和项目级rules合并后超长被截断。<br />
+• AutoGPT案例&#xff1a;记住了之前的失败尝试&#xff0c;但没有正确标记&#34;这是失败&#34;&#xff0c;每次循环都重复执行相同的失败方案&#xff0c;又缺少合适的中止机制&#xff0c;陷入烧token循环。<br />
+• Minimax M2.7案例&#xff1a;前一晚看到官方宣称通过模型的自我进化追平GPT-5.3-Codex、几乎追评Opus 4.6&#xff0c;第二天早上实测下来和Opus 4.6差距很大&#xff0c;写出来的代码有bug&#xff0c;改了几版都不对&#xff0c;最后删掉让Opus 4.6重写 一次就好。猜测在评测时&#xff0c;应该是有持续沉淀了一些正确代码的记忆&#xff0c;所以导致在benchmark下表现比较好&#xff0c;但在冷启动时表现不佳。但如果是记住失败案例呢&#xff1f;<br />
+• AI Coding IDE案例&#xff1a;在使用有记忆系统的AI IDE打磨代码模板时&#xff0c;多个旧版本被记录到记忆系统中&#xff0c;按照新的要求生成时仍然会被这些旧版本污染。<br />
+• XxClaw案例&#xff1a;串会话。失败案例污染&#xff1a;在 会话1 发现缺少 xx skill 无法完成任务&#xff0c;安装skill后 在会话2让执行任务&#xff0c;还是说 刚才已经发现缺少skill无法执行了&#xff0c;直接结束任务。</p>
+
+<p>
+总结下就是&#xff1a;会话和用户隔离问题、上下文窗口大小限制导致的指令截断和压缩后否定翻转、未能识别标记badcase而作为记忆召回导致上下文污染。<br />
+针对这些问题&#xff0c;一方面是AI应用本身要进一步加强对记忆系统的安全校验机制&#xff0c;另一方面对用户来说&#xff1a;如果我们不了解背后的上下文压缩机制&#xff0c;可以尽量写正面提示词&#xff0c;避免压缩后被否定翻转&#xff0c;或者在结尾处重复多讲几次。</p>
+
+<p></p>
+
+<p></p>
+
+<p class="img-center"><img alt="图片" height="350" src="/assets/posts/openclaw-observation/image-12.jpeg" width="350" /></p>
+
+<p></p>
+
+<h2>#3 对小龙虾带来的变化的个人理解</h2>
+
+<h3>
+#3.1 一开源就超越&#xff0c;百虾大战的核心竞争力是什么 </h3>
+
+<p>小龙虾带来的第一个变化就是百虾大战&#xff0c;让token更普及到千家万户。<br />
+那这么多龙虾&#xff0c;个人和企业会怎么选&#xff0c;它们有什么区别和核心竞争力&#xff1f;我认为是&#xff1a;<br />
+1. 记忆系统&#xff0c;不同场景是有差异的&#xff0c;要做好也有挑战。<br />
+2. 安全和品牌信任度 —— 才能让客户愿意开放数据做深度结合&#xff0c;让产品越来越好用。<br />
+3. 客户获取/销售能力&#xff0c;能够帮客户定制解决方案完成实施&#xff0c;快速把企业流程和经验skill/cli化&#xff0c;最终给客户带来收益。</p>
+
+<p></p>
+
+<p></p>
+
+<p class="img-center"><img alt="图片" height="690" src="/assets/posts/openclaw-observation/image-13.jpeg" width="515" /></p>
+
+<p></p>
+
+<p></p>
+
+<p>当类龙虾的AI解决方案成功卖给企业或客户后&#xff0c;在ToB 场景需要和企业数据做深度结合&#xff0c;在To大C场景 能用好的记忆系统 成为越懂用户的数字助手。这就要求企业内生产关系做调整、生产资料向AI开放&#xff08;cli化&#xff09;&#xff0c;也就是组织AI化。</p>
+
+<p>
+比如现在业界不少创业新公司CTO的AI助手和他一样都具备了访问全公司资料的权限&#xff0c;比CTO还了解公司全局和细节。</p>
+
+<p>
+但也有一些偏传统企业应用AI后效果不符合预期&#xff0c;仍然存在着AI化改造的挑战&#xff1a;<br />
+• 某保险公司开发的 AI 理赔系统上线后准确率仅 60%&#xff0c;因数据格式混乱、内容过时&#xff0c;需额外花 2 个月清洗数据&#xff0c;项目严重延期&#xff1b;<br />
+• 某制造企业 AI 质检系统误判率 15%&#xff08;而人工仅 3%&#xff09;&#xff0c;因产线数据无法实时接入&#xff0c;三套老旧系统打通需半年且预算超支&#xff0c;系统上线三个月后“休眠”&#xff1b;<br />
+• 某连锁超市巨头引入 AI 动态补货系统&#xff0c;覆盖 1200 家门店&#xff0c;上线后&#xff0c;华东区门店缺货率飙升 40%&#xff0c;而华南区却库存积压。</p>
+
+<p></p>
+
+<h3>#3.2 为什么要等开源才超越&#xff0c;为什么是peter写出了openclaw </h3>
+
+<blockquote>
+<p>I don&#39;t need money. I want to have fun and impact.</p>
+
+<p>Peter&#xff0c; 一个财务自由躺平3年觉得无聊的人&#xff0c;要寻求乐趣和价值。</p>
+</blockquote>
+
+<p>
+我首先是思考自己在什么样的条件下&#xff0c;有可能会做出openclaw。后面觉得也不用对自己太苛求&#xff0c;年薪1亿美元的AI人才也没写出openclaw&#xff0c;硅谷那么多顶尖AI企业和人才也没人写出来。而且peter也是无压力、凭乐趣地持续做了一年多才火出圈。</p>
+
+<p>
+为什么是peter做出了 openclaw&#xff0c;我个人理解&#xff1a;<br />
+1. 越有公司和业务全局观&#xff0c;越有big picture上下文的&#xff0c;越有机会触发去做openclaw这类全景AI数字员工。越做具体工作的&#xff0c;概率越小。<br />
+2. 未来更多是被构建出来的&#xff0c;而不是预测出来的。国外很多CEO都是下场开发&#xff0c;除了peter&#xff0c;还有扎克伯格也在开发CEO Agent&#xff0c;YC的CEO也在构建AI虚拟工程团队。国内有傅盛这个CEO例子&#xff0c;他能无压力、有时间、拿整个公司资料来构建。<br />
+3. peter个人的特质和经验能力&#xff0c;从底层架构到上层产品需求定位和开发经验&#xff0c;财务自由后个人痛点和兴趣驱动的持续创新底气。</p>
+
+<h3>
+#3.3 更多变化观察</h3>
+
+<p>
+AI的发展从 chatbot 到 workflow 到 agent 再到 coding agent&#xff0c;中间有套壳大模型的manus&#xff0c;现在是套壳coding agent的 openclaw。</p>
+
+<p>openclaw回答了之前有人提出的一个问题&#xff1a;在2026年&#xff0c;你预测AI领域会出现哪些像coding agent这样现象级的产品&#xff1f;<br />
+现在大家都比较明确地感受到了&#xff0c;新的现象级产品&#xff0c;从编程领域的千亿美元市场&#xff0c;扩展到万亿美元的劳动力市场。</p>
+
+<p></p>
+
+<p></p>
+
+<p class="img-center"><img alt="图片" height="632" src="/assets/posts/openclaw-observation/image-14.jpeg" width="1080" /></p>
+
+<p></p>
+
+<p>目前AI应用还处于human in the loop的阶段&#xff0c;因为人机转速比不匹配&#xff0c;创业公司的CTO都被AI评价为瓶颈&#xff0c;所以人类觉得更累。</p>
+
+<p>
+接下来比较明确的发展方向就是从人管AI 向 AI管AI发展&#xff08;openclaw就是&#xff09;&#xff0c;打造7x24 小时数字员工。<br />
+那么&#xff0c;AI越发展&#xff0c;如果越导致人类失业&#xff0c;消费力下降&#xff0c;那AI公司赚什么钱呢&#xff1f;</p>
+
+<p>
+我问了AI这个问题&#xff0c;得到的回复是&#xff1a;<br />
+1. 短期&#xff0c;AI先赚ToB的钱。因为一开始人类失业&#xff0c;是伴随着企业利润的短期增加。<br />
+2. 中期&#xff0c;政府可能被迫介入。<br />
+3. 长期&#xff0c;不知道。</p>
+
+<p>
+业界AI创业公司也需要面对这个问题&#xff0c;他们有的回答是&#xff1a;我们也不知道&#xff0c;所以他们也不再做5年规划&#xff0c;只看未来3-6个月&#xff0c;而且策略改成“预判为辅、跟随为主”、“提高胜率而不是赔率”、“优先把确定性的事实做好”。</p>
+
+<p>
+这不只是发生在小创业公司&#xff0c;而是从创业公司到OpenAI这样的领头羊。比如Anthropic只做coding agent这个确定性的事情&#xff0c;做到世界最好&#xff0c;现在倒逼OpenAI关停Sora、重新聚焦回到主线。<br />
+而我们普通个人&#xff0c;面对这个极大概率是和历史上其它科技革命都不一样的巨浪&#xff0c;也只能享受冲浪了&#x1f3c4;&#x1f3fb; 去拥抱和适应。<br />
+ </p>
+
+<p></p>
+
+<p class="img-center"><img alt="图片" height="642" src="/assets/posts/openclaw-observation/image-15.jpeg" width="510" /></p>
+
+                </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 Seize the Moment</p>
+    </footer>
+  </body>
+</html>
